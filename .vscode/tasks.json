@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // {
+        //     "label": "build Projucer",
+        //     "type": "shell",
+        //     "command": "make",
+        //     "args": [
+        //         "-C",
+        //         "submodules/AlgoGRIS/submodules/JUCE/extras/Projucer/Builds/LinuxMakefile",
+        //         // "CONFIG=Release",
+        //         "-j8"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": false
+        //     },
+        //     "problemMatcher": {
+        //         "base": "$gcc",
+        //         "fileLocation": ["relative", "${workspaceFolder}/submodules/AlgoGRIS/submodules/JUCE/extras/Projucer/Builds/LinuxMakefile"]
+        //     }
+        // },
+        // {
+        //     "label": "resave SpatGRIS.jucer",
+        //     "type": "shell",
+        //     "command": "submodules/AlgoGRIS/submodules/JUCE/extras/Projucer/Builds/LinuxMakefile/build/Projucer",
+        //     "args": [
+        //         "--resave",
+        //         "SpatGRIS.jucer"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": false
+        //     },
+        //     "problemMatcher": []
+        // },
+        {
+            "label": "Build DebugLog",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-C",
+                "Builds/LinuxMakefile",
+                // "CONFIG=Release",
+                "-j8"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceFolder}/Builds/LinuxMakefile"]
+            }
+        }
+    ]
+}

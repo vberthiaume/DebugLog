@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/vberthiaume/Documents/git/sat/GRIS/SpatGRIS/Source/**",
+                "/home/vberthiaume/Documents/git/sat/GRIS/SpatGRIS/submodules/AlgoGRIS/**",
+                "/home/vberthiaume/Documents/git/sat/GRIS/SpatGRIS/submodules/AlgoGRIS/Data/**",
+                "/home/vberthiaume/Documents/git/sat/GRIS/SpatGRIS/submodules/AlgoGRIS/Containers/**",
+                "/home/vberthiaume/Documents/git/sat/GRIS/SpatGRIS/submodules/AlgoGRIS/submodules/JUCE/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang++-18",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

@@ -1,0 +1,17 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++-18",
+    "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
+    "files.associations": {
+        "*.mm": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "span": "cpp",
+        "regex": "cpp",
+        "*.tcc": "cpp",
+        "functional": "cpp",
+        "format": "cpp",
+        "iosfwd": "cpp"
+    }
+}
