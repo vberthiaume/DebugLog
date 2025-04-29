@@ -6,8 +6,8 @@ static constexpr auto kMaxDebugEntries { 2048 };
 
 struct DebugLogEntry
 {
-    juce::int64 startTime {};
-    juce::int64 endTime {};
+    juce::int64 timeSinceLastCall {};
+    juce::int64 processCallDuration {};
     int         curEffect {};
 };
 
@@ -17,10 +17,10 @@ struct DebugLog
     volatile size_t logHead {};
 };
 
-inline void printDebugLogEntry (DebugLogEntry& logEntry, juce::int64 timeCounterResolution)
+inline void printDebugLogEntry (DebugLogEntry& logEntry)
 {
-    std::cout << "Start: " << juce::String (logEntry.startTime / timeCounterResolution)
-              << ", End: " << juce::String (logEntry.endTime / timeCounterResolution)
+    std::cout << "timeSinceLastCall: " << juce::String (logEntry.timeSinceLastCall)
+              << ", processCallDuration: " << juce::String (logEntry.processCallDuration)
               << ", Effect: " << logEntry.curEffect << std::endl;
 }
 
@@ -38,7 +38,6 @@ int main (int argc, char* argv[])
         //latch tail to head
         size_t logTail (m_pLogDebug->logHead);
 
-        const auto highResFrequency { juce::Time::getHighResolutionTicksPerSecond() };
         while (true)
         {
             //if head moved forward
@@ -46,7 +45,7 @@ int main (int argc, char* argv[])
             {
                 auto& logDebugEntry = m_pLogDebug->log[logTail];
 
-                printDebugLogEntry (logDebugEntry, highResFrequency);
+                printDebugLogEntry (logDebugEntry);
 
                 //try to catch up with head
                 logTail = (logTail + 1) & (kMaxDebugEntries - 1);
