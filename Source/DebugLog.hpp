@@ -3,9 +3,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #if JUCE_WINDOWS
-//TODO
-jassertfalse;
-static const juce::File memoryMappedFile { "/tmp/ProPhatSharedMemory" };
+static const juce::File memoryMappedFile { "C:/temp/ProPhatSharedMemory" };
 #else
 static const juce::File memoryMappedFile { "/tmp/ProPhatSharedMemory" };
 #endif
