@@ -1,7 +1,7 @@
 #include "DebugLog.hpp"
 
 //==============================================================================
-int main (int argc, char* argv[])
+int main (int /*argc*/, char* /*argv[]*/)
 {
     std::cout << "ProPhat Debug Log Reader" << std::endl;
 
@@ -11,6 +11,7 @@ int main (int argc, char* argv[])
     if (! m_pLogDebug)
     {
         std::cerr << "\n\nError! Failed to map file " << memoryMappedFile.getFullPathName() << " to memory\n\n\n";
+        jassertfalse;
         return 1;
     }
 
