@@ -1,7 +1,7 @@
 #include "DebugLog.hpp"
 
 //==============================================================================
-int main (int /*argc*/, char* /*argv[]*/)
+int main (int /*argc*/, char** /*argv[]*/)
 {
     std::cout << "ProPhat Debug Log Reader" << std::endl;
 

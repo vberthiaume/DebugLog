@@ -30,7 +30,7 @@ struct DebugLog
 //======================================================================================
 inline void printDebugLogEntry (DebugLogEntry& logEntry)
 {
-    std::cout << "timeSinceLastCall: " << juce::String (logEntry.timeSinceLastCall)
-    << ", processCallDuration: " << juce::String (logEntry.processCallDuration)
+    std::cout << "time since: " << juce::String (logEntry.timeSinceLastCall)
+    << ", duration: " << juce::String (logEntry.processCallDuration)
     << ", Effect: " << logEntry.curEffect << std::endl;
 }
