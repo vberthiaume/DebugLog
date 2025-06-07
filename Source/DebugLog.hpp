@@ -3,7 +3,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #define ENABLE_DEBUG_LOG 1
-#define ENABLE_GAIN_LOGGING ENABLE_DEBUG_LOG && 0
+#define ENABLE_GAIN_LOGGING ENABLE_DEBUG_LOG && 1
 
 #if JUCE_WINDOWS
 static const juce::File memoryMappedFile { "C:/temp/ProPhatSharedMemory" };
@@ -20,8 +20,8 @@ struct DebugLogEntry
     juce::int64 processCallDuration {};
     int         curEffect {};
 #if ENABLE_GAIN_LOGGING
-    //this cannot be a string, it needs to be a fixed size char array, because the printing is based on size
-    char gainRamp[5120]; //it takes 7 chars per float, so approximation here is 10x the buffer size i have lol
+    float firstGain {};
+    float lastGain {};
 #endif
 };
 
@@ -39,7 +39,8 @@ inline void printDebugLogEntry (DebugLogEntry& logEntry)
               << ", duration: " << juce::String (logEntry.processCallDuration)
               << ", effect: " << logEntry.curEffect
 #if ENABLE_GAIN_LOGGING
-              << ", gainRamp: " << logEntry.gainRamp
+              << ", first gain: " << logEntry.firstGain
+              << ", last gain: " << logEntry.lastGain
 #endif
               << "\n";
 }
