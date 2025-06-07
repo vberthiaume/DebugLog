@@ -25,7 +25,7 @@ int main (int /*argc*/, char** /*argv[]*/)
         {
             auto& logDebugEntry = m_pLogDebug->log[logTail];
 
-            printDebugLogEntry (logDebugEntry);
+            printDebugLogEntry (logTail, logDebugEntry);
 
             //try to catch up with head
             logTail = (logTail + 1) & (kMaxDebugEntries - 1);

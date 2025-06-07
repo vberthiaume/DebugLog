@@ -33,10 +33,11 @@ struct DebugLog
 };
 
 //======================================================================================
-inline void printDebugLogEntry (DebugLogEntry& logEntry)
+inline void printDebugLogEntry (size_t index, DebugLogEntry& logEntry)
 {
-    std::cout << "time since: " << juce::String (logEntry.timeSinceLastCall)
-              << ", duration: " << juce::String (logEntry.processCallDuration)
+    std::cout << index
+//              << ": time since: " << juce::String (logEntry.timeSinceLastCall)
+//              << ", duration: " << juce::String (logEntry.processCallDuration)
               << ", effect: " << logEntry.curEffect
 #if ENABLE_GAIN_LOGGING
               << ", first gain: " << logEntry.firstGain
