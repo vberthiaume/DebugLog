@@ -2,7 +2,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-#define ENABLE_DEBUG_LOG 1
+#define ENABLE_DEBUG_LOG 0
 #define ENABLE_GAIN_LOGGING ENABLE_DEBUG_LOG && 1
 
 #if JUCE_WINDOWS
