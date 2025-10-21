@@ -3,7 +3,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 #define ENABLE_DEBUG_LOG 1
-#define ENABLE_GAIN_LOGGING ENABLE_DEBUG_LOG && 1
+#define ENABLE_GAIN_LOGGING ENABLE_DEBUG_LOG && 0
 
 #if JUCE_WINDOWS
 static const juce::File memoryMappedFile { "C:/temp/ProPhatSharedMemory" };
@@ -36,8 +36,8 @@ struct DebugLog
 inline void printDebugLogEntry (size_t index, DebugLogEntry& logEntry)
 {
     std::cout << index
-//              << ": time since: " << juce::String (logEntry.timeSinceLastCall)
-//              << ", duration: " << juce::String (logEntry.processCallDuration)
+              << ": time since: " << juce::String (logEntry.timeSinceLastCall)
+              << ", duration: " << juce::String (logEntry.processCallDuration)
               << ", effect: " << logEntry.curEffect
 #if ENABLE_GAIN_LOGGING
               << ", first gain: " << logEntry.firstGain
