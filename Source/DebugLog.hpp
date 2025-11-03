@@ -2,7 +2,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-#define ENABLE_DEBUG_LOG 0
+#define ENABLE_DEBUG_LOG JUCE_DEBUG
 
 #if JUCE_WINDOWS
 static const juce::File memoryMappedFile { "C:/temp/ProPhatSharedMemory" };
